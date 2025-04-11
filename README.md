@@ -1,7 +1,7 @@
 <h1 align = "center">VIEWE ESP32-S3 Smart Display Quick Guide </h1>
 <p align="center">
     <img src="image/4_3inch.jpg" alt="">
-    <h1 align = "center" style="font-size: 18px;">Model: UEDX80480043E-WB-A</h1>
+    <h1 align = "center" style="font-size: 18px;">Model: UEDX48270043E-WB-A</h1>
 </p>
 
 * **[中文版](./README_CN.md)**
@@ -35,7 +35,7 @@
 
 | Product                     | SOC           |  FLASH  |  PSRAM   | Link                   |
 | :------------------------: | :-----------: |:-------: | :---------: | :------------------: |
-| UEDX80480070E-WB-A V1.1   | ESP32S3R8 |   16M   | 8M (Octal SPI) | [VIEWE Mall](https://viewedisplay.com/product/esp32-7-inch-800x480-rgb-ips-tft-display-touch-screen-arduino-lvgl-uart/)  |
+| UEDX48270043E-WB-A V1.1   | ESP32S3R8 |   16M   | 8M (Octal SPI) | [VIEWE Mall](https://viewedisplay.com/product/esp32-7-inch-800x480-rgb-ips-tft-display-touch-screen-arduino-lvgl-uart/)  |
 
 ## Hardware Overview
 
@@ -97,7 +97,7 @@ Note: The model name is determined by the screen resolution and size
 5. Configure the development board:
     * Edit the `esp_panel_board_supported_conf.h` file.
     * Enable the macro: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
-    * Uncomment the corresponding screen model definition: `#define BOARD_VIEWE_UEDX80480043E_WB_A`
+    * Uncomment the corresponding screen model definition: `#define BOARD_VIEWE_UEDX48270043E_WB_A`
 6. Configure tool options (S3):
    
     | Setting                               | Value                         |

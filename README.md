@@ -35,7 +35,7 @@
 
 | Product                     | SOC           |  FLASH  |  PSRAM   | Link                   |
 | :------------------------: | :-----------: |:-------: | :---------: | :------------------: |
-| UEDX48270043E-WB-A V1.1   | ESP32S3R8 |   16M   | 8M (Octal SPI) | [VIEWE Mall](https://viewedisplay.com/product/esp32-7-inch-800x480-rgb-ips-tft-display-touch-screen-arduino-lvgl-uart/)  |
+| UEDX48270043E-WB-A V1.1   | ESP32S3R8 |   16M   | 8M (Octal SPI) | [VIEWE Mall](https://viewedisplay.com/product/esp32-4-3-inch-480x272-rgb-ips-tft-display-touch-screen-arduino-lvgl-wifi-ble-uart-smart-module/)  |
 
 ## Hardware Overview
 
@@ -43,7 +43,7 @@
 * Chip: ESP32-S3-N16R8
 * PSRAM: 8M (Octal SPI) 
 * FLASH: 16M
-* For more details, please visit[Espressif ESP32-S3 Datashee](https://www.espressif.com.cn/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
+* For more details, please visit [Espressif ESP32-S3 Datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
 
 ### 2. Screen
 * Size: 5-inch IPS screen
@@ -52,14 +52,14 @@
 * Driver chip: ST7262E43-G4
 * Compatibility library:  ESP32_Display_Panel
 * Bus communication protocol: RGB
-* For more details：[Display Datasheet](datasheet/UE043WV-RB40-L037A.pdf)
+* For more details：[Display Datasheet](datasheet/LCM-UE043HV-RB40-L083A SPEC.pdf)
   
 Note: The model name is determined by the screen resolution and size
 
 ### 3. Touch
 * Chip: GT911
 * Bus communication protocol: IIC
-* For more details：[Touch IC Datasheet_EN](information/GT911_EN_Datasheet.pdf)
+* For more details：[Touch IC Datasheet_EN](datasheet/GT911_EN_Datasheet.pdf)
 
 ## Hardware Connections
 - Connect the screen ribbon cable and touch ribbon cable (gold contacts 
@@ -190,13 +190,13 @@ Note: The model name is determined by the screen resolution and size
 </p>
 
 ## Information
-[products specification](datasheet/UEDX80480043E-WB-A%20V3.2%20SPEC.pdf)
+[Products specification](datasheet/UEDX48270043E-WB-A%20V3.1%20SPEC.pdf)
 
-[Display Datasheet](datasheet/UE043WV-RB40-L037A.pdf)
+[Display Datasheet](datasheet/LCM-UE043HV-RB40-L083A%20SPEC.pdf)
 
 [Touch IC Datasheet_EN](datasheet//GT911_EN_Datasheet.pdf)
 
-[Touch IC Datasheet_CN](datasheet/n/GT911_CN_Datasheet.pdf)
+[Touch IC Datasheet_CN](datasheet/GT911_CN_Datasheet.pdf)
 
 [5050RGB-LED](datasheet//C2843785_RGB%2BLED(Built-in%20IC)_XL-5050RGBC-WS2812B_specification_WJ1123912.PDF)
 

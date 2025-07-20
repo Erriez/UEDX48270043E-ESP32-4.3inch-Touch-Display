@@ -69,7 +69,7 @@ Note: The model name is determined by the screen resolution and size
 - For the first programming, press and hold the `BOOT` button to enter 
  download mode.
 <p align="center" width="100%">
-    <img src="image/overview.png" alt="example">
+    <img src="image/overview.png" alt="TODO: Fix overview.png example">
 </p>
 
 

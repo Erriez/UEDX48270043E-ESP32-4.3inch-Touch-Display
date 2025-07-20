@@ -183,7 +183,9 @@ Note: The model name is determined by the screen resolution and size
 
 ## Schematic
 <p align="center" width="100%">
-    <img src="image/UEDX80480043E-sch.png" alt="example">
+    <a href="Schematic/UEDX48270043E-sch.png" target="_blank">
+        <img src="Schematic/UEDX48270043E-sch_thumb.png" alt="schematic">
+    </a>
 </p>
 
 ## Information

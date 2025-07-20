@@ -35,7 +35,7 @@
     "arduino",
     "espidf"
   ],
-  "name": "Viewe UEDX80480070E-WB-A",
+  "name": "Viewe UEDX48270043E-WB-A",
   "upload": {
     "flash_size": "16MB",
     "maximum_ram_size": 327680,

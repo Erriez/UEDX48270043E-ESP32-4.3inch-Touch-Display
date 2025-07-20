@@ -22,11 +22,9 @@
 ```
 ├── Libraries         Library files required for the Arduino example  
 ├── Schematic         The circuit schematic of the product   
+├── datasheet         Product specifications, including the IC or peripherals involved
 ├── examples          Sample files, including the IDF framework and the Arduino framework
-├── firmware          firmware
 ├── image             Product or sample project related images
-├── information       Product specifications, including the IC or peripherals involved
-├── tools             Burn tool and image conversion tool
 ├── README_CN.md      Chinese version Quick Guide and Product Brief
 └── README.md         English version of the quick guide and product introduction
 ```
@@ -201,8 +199,10 @@ Note: The model name is determined by the screen resolution and size
 
 [CH340C](datasheet//C84681_USB%20Conversion%20chip_CH340C_specification_WJ1187874.PDF)
 
-## firmware download
-1. Open the project file "tools" and locate the ESP32 burning tool. Open it.
+## Firmware download
+
+TODO: This section is outdated:
+
 
 2. Select the correct burning chip and burning method, then click "OK." As shown in the picture, follow steps 1->2->3->4->5 to burn the program. If the burning is not successful, press and hold the "BOOT-0" button and then download and burn again.
 

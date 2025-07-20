@@ -86,7 +86,7 @@ Note: The model name is determined by the screen resolution and size
 - Repository Address: [examples](examples/esp_idf)
 
 ### Arduino Framework ([Novice tutorial]())
-1. Install[Arduino](https://www.arduino.cc/en/software),Choose installation based on your system type.
+1. Install [Arduino](https://www.arduino.cc/en/software), Choose installation based on your system type.
 2. Install the ESP32 core: Search for and download `esp32`(by Espressif >= v3.2.1) in the `Board Manager`.
 3. Install the required libraries:
     * Search and install `ESP32_Display_Panel` (v1.0.3). Select `Yes` for automatic dependency installation.
@@ -112,13 +112,13 @@ Note: The model name is determined by the screen resolution and size
 8. Click "<kbd>[√](image/8.png)</kbd>" in the upper right corner to compile,If the compilation is correct, connect the microcontroller to the computer,Click "<kbd>[→](image/9.png)</kbd>" in the upper right corner to download.
 
 ### PlatformIO ([Novice tutorial]())
-1. Install[VisualStudioCode](https://code.visualstudio.com/Download),Choose installation based on your system type.
+1. Install [VisualStudioCode](https://code.visualstudio.com/Download), Choose installation based on your system type.
 
-2. Open the "Extension" section of the Visual Studio Code software sidebar(Alternatively, use "<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>" to open the extension),Search for the "PlatformIO IDE" extension and download it.
+2. Open the "Extension" section of the Visual Studio Code software sidebar(Alternatively, use "<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>" to open the extension), Search for the "PlatformIO IDE" extension and download it.
 
 3. During the installation of the extension, you can go to GitHub to download the program. You can download the main branch by clicking on the "<> Code" with green text.
 
-4. After the installation of the extension is completed, open the Explorer in the sidebar(Alternatively, use "<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd>" go open it),Click "Open Folder", find the project code you just downloaded (the entire folder), then find the PlatformIO folder and click "Add". At this point, the project file will be added to your workspace.
+4. After the installation of the extension is completed, open the Explorer in the sidebar(Alternatively, use "<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd>" go open it), Click "Open Folder", find the project code you just downloaded (the entire folder), then find the PlatformIO folder and click "Add". At this point, the project file will be added to your workspace.
 
 5. Open the "platformio.ini" file in the project folder (PlatformIO will automatically open the "platformio.ini" file corresponding to the added folder). Under the "[platformio]" section, uncomment and select the example program you want to burn (it should start with "default_envs = xxx") Then click "<kbd>[√](image/4.png)</kbd>" in the bottom left corner to compile,If the compilation is correct, connect the microcontroller to the computer and click "<kbd>[→](image/5.png)</kbd>" in the bottom left corner to download the program.
 

@@ -89,7 +89,7 @@ Note: The model name is determined by the screen resolution and size
 1. Install[Arduino](https://www.arduino.cc/en/software),Choose installation based on your system type.
 2. Install the ESP32 core: Search for and download `esp32`(by Espressif >= v3.2.1) in the `Board Manager`.
 3. Install the required libraries:
-    * Search and install `ESP32_Display_Panel` (v1.0.0). Select `Yes` for automatic dependency installation.
+    * Search and install `ESP32_Display_Panel` (v1.0.3). Select `Yes` for automatic dependency installation.
     * Install the `LVGL` (v8.4.0) library. 
 4. Open the example: `ESP32_Display_Panel`-> `examples` -> `arduino` -> `gui` -> `lvgl_v8`.
 5. Configure the development board:

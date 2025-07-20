@@ -38,16 +38,16 @@
 ## Hardware Overview
 
 ### 1.MCU
-* Chip: ESP32-S3-N16R8
-* PSRAM: 8M (Octal SPI) 
-* FLASH: 16M
+* Chip: `ESP32-S3-N16R8`
+* PSRAM: `8M (Octal SPI)`
+* FLASH: `16M`
 * For more details, please visit [Espressif ESP32-S3 Datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
 
 ### 2. Screen
 * Size: 4.3-inch IPS screen
 * Resolution: 480x272px
 * Screen type: IPS
-* Driver chip: ST7262E43-G4
+* Driver chip: `ST7262E43-G4`
 * Compatibility library:  ESP32_Display_Panel
 * Bus communication protocol: RGB
 * For more details：[Display Datasheet](datasheet/LCM-UE043HV-RB40-L083A SPEC.pdf)
@@ -55,7 +55,7 @@
 Note: The model name is determined by the screen resolution and size
 
 ### 3. Touch
-* Chip: GT911
+* Chip: `GT911`
 * Bus communication protocol: IIC
 * For more details：[Touch IC Datasheet_EN](datasheet/GT911_EN_Datasheet.pdf)
 
@@ -203,8 +203,9 @@ Note: The model name is determined by the screen resolution and size
 
 TODO: This section is outdated:
 
+1. Open the project file `tools` and locate the ESP32 burning tool. Open it.
 
-2. Select the correct burning chip and burning method, then click "OK." As shown in the picture, follow steps 1->2->3->4->5 to burn the program. If the burning is not successful, press and hold the "BOOT-0" button and then download and burn again.
+2. Select the correct burning chip and burning method, then click `OK.` As shown in the picture, follow steps 1->2->3->4->5 to burn the program. If the burning is not successful, press and hold the `BOOT-0` button and then download and burn again.
 
 3. Burn the file in the root directory of the project file "[firmware](./firmware/)" file,There is a description of the firmware file version inside, just choose the appropriate version to download.
 
@@ -225,13 +226,13 @@ TODO: This section is outdated:
 
 <br />
 
-* Q. Why is there no serial data output on the "Uart" interface on my board? Is it defective and unusable?
-* A. The default project configuration uses the USB interface as Uart0 serial output for debugging purposes. The "Uart" interface is connected to Uart0, so it won't output any data without configuration.<br />For PlatformIO users, please open the project file "platformio.ini" and modify the option under "build_flags = xxx" from "-D ARDUINO_USB_CDC_ON_BOOT=true" to "-D ARDUINO_USB_CDC_ON_BOOT=false" to enable external "Uart" interface.<br />For Arduino users, open the "Tools" menu and select "USB CDC On Boot: Disabled" to enable the external "Uart" interface.
+* Q. Why is there no serial data output on the `Uart` interface on my board? Is it defective and unusable?
+* A. The default project configuration uses the USB interface as Uart0 serial output for debugging purposes. The `Uart` interface is connected to Uart0, so it won't output any data without configuration.<br />For PlatformIO users, please open the project file `platformio.ini` and modify the option under `build_flags = xxx` from `-D ARDUINO_USB_CDC_ON_BOOT=true` to `-D ARDUINO_USB_CDC_ON_BOOT=false` to enable external `Uart` interface.<br />For Arduino users, open the `Tools` menu and select `USB CDC On Boot: Disabled` to enable the external `Uart` interface.
 
 <br />
 
 * Q. Why is my board continuously failing to download the program?
-* A. Please hold down the "BOOT" button and try downloading the program again.
+* A. Please hold down the `BOOT` button and try downloading the program again.
 
 
 

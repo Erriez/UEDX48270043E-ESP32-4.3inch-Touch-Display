@@ -2,7 +2,7 @@
 
 <div align="center">
     <img src="image/4_3inch.jpg" alt="4.3英寸显示屏">
-    <h1 style="font-size: 18px;">型号: UEDX80480043E-WB-A</h1>
+    <h1 style="font-size: 18px;">型号: UEDX48270043E-WB-A</h1>
 </div>
 
 * **[English Version](./README.md)**
@@ -23,11 +23,9 @@
 ```
 ├── Libraries     Arduino 示例所需库文件
 ├── Schematic     产品电路图
+├── datasheet     产品规格书（含芯片及外设资料）
 ├── examples      示例文件（包含 IDF 和 Arduino 框架）
-├── firmware      固件文件
 ├── image         产品及示例相关图片
-├── information   产品规格书（含芯片及外设资料）
-├── tools         烧录工具及镜像转换工具
 ├── README_CN.md  中文版快速指南和产品简介
 └── README.md     英文版快速指南和产品简介
 ```
@@ -36,7 +34,7 @@
 
 | 产品                     | 主控芯片     | 闪存   | PSRAM   | 购买链接                   |
 | :------------------------: | :-----------: |:-------: | :---------: | :------------------: |
-| UEDX80480070E-WB-A V1.1   | ESP32S3R8 | 16MB   | 8M（八线SPI） | [VIEWE商城](https://viewedisplay.com/product/esp32-7-inch-800x480-rgb-ips-tft-display-touch-screen-arduino-lvgl-uart/)  |
+| UEDX48270043E-WB-A V1.1   | ESP32S3R8 | 16MB   | 8M（八线SPI） | [VIEWE商城](https://viewedisplay.com/product/esp32-4-3-inch-480x272-rgb-ips-tft-display-touch-screen-arduino-lvgl-wifi-ble-uart-smart-module//)  |
 
 ## 硬件概述
 
@@ -44,23 +42,23 @@
 - 芯片: ESP32-S3-N16R8
 - PSRAM: 8M（八线SPI）
 - 闪存: 16M
-- 详细资料: [Espressif ESP32-S3数据手册](https://www.espressif.com.cn/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
+- 详细资料: [Espressif ESP32-S3数据手册](https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
 
 ### 2.显示屏
 - 尺寸: 7英寸IPS屏
-- 分辨率: 800x480px
+- 分辨率: 480x272px
 - 屏幕类型: IPS
-- 驱动芯片: EK9716BD3+EK73002AB2
+- 驱动芯片: ST7262E43-G4
 - 兼容库: ESP32_Display_Panel
 - 总线协议: RGB
-- 详细资料：[屏幕数据手册](datasheet/UE043WV-RB40-L037A.pdf)
+- 详细资料：[屏幕数据手册](datasheet/LCM-UE043HV-RB40-L083A SPEC.pdf)
 
 注：型号由屏幕尺寸和分辨率决定
 
 ### 3.触摸模块
 - 芯片: GT911
 - 总线协议: IIC
-- 详细资料：[触摸IC数据手册](datasheet/GT911_CN_Datasheet.pdf)
+- 详细资料：[触摸IC数据手册](datasheet/GT911_EN_Datasheet.pdf)
 
 ## 硬件连接
 - 连接屏幕排线和触摸排线（金色触点朝上）
@@ -88,15 +86,15 @@
 
 ### Arduino框架 ([新手教程]())
 1. 安装[Arduino](https://www.arduino.cc/en/software)
-2. 安装ESP32核心：在Board Manager中搜索下载`esp32`（版本>=v3.0.7）
+2. 安装ESP32核心：在Board Manager中搜索下载`esp32`（版本>=v3.2.1）
 3. 安装依赖库：
-    * 搜索安装`ESP32_Display_Panel`（v1.0.0），自动安装依赖
+    * 搜索安装`ESP32_Display_Panel`（v1.0.3），自动安装依赖
     * 安装`LVGL`（v8.4.0）库
 4. 打开示例：`ESP32_Display_Panel`-> `examples` -> `arduino` -> `gui` -> `lvgl_v8`
 5. 开发板配置：
-    * 编辑`esp_panel_board_supported_conf.h`
-    * 启用宏定义: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
-    * 取消注释屏幕型号定义: `#define BOARD_VIEWE_UEDX80480043E_WB_A`
+    * 编辑`esp_panel_board_supported_conf.h`:
+      * 启用宏定义: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
+      * 取消注释屏幕型号定义: `#define BOARD_VIEWE_UEDX80480043E_WB_A`
 6. 工具配置（S3）：
 
     | 配置项                            | 值                                   |
@@ -125,7 +123,7 @@
 |------------|------------|
 | DE         | IO40       |
 | VS         | IO41       |
-| HS         | IO439      |
+| HS         | IO39       |
 | PCLK       | IO42       |
 | R0         | IO45       |
 | R1         | IO48       |
@@ -143,7 +141,6 @@
 | B2         | IO46       |
 | B3         | IO9        |
 | B4         | IO1        |
-| RST        | IO39       |
 | BACKLIGHT  | IO2        |
 
 | 触摸芯片引脚 | ESP32S3引脚 |
@@ -164,11 +161,11 @@
 | RESET  | CHIP-EN    |
 
 | SD卡引脚 | ESP32S3引脚 |
-|--------|------------|
-| D1     | IO18       |
-| D2     | IO15       |
-| MOSI   | IO17       |
-| MISO   | IO16       |
+|---------|-------------|
+| CS          | IO10    |
+| MOSI        | IO11    |
+| SCK         | IO12    |
+| MISO        | IO13    |
 
 | UART/RS485引脚 | ESP32S3引脚 |
 |---------------|------------|
@@ -181,21 +178,23 @@
 
 ## 电路图
 <div align="center" width="100%">
-    <img src="image/UEDX80480043E-sch.png" alt="电路图">
+    <a href="Schematic/UEDX48270043E-sch.png" target="_blank">
+        <img src="Schematic/UEDX48270043E-sch_thumb.png" alt="电路图">
+    </a>
 </div>
 
 ## 技术资料
-[产品规格书](datasheet/UEDX80480043E-WB-A%20V3.2%20SPEC.pdf)
+[产品规格书](datasheet/UEDX48270043E-WB-A%20V3.1%20SPEC.pdf)
 
-[显示屏数据手册](datasheet/UE043WV-RB40-L037A.pdf)
+[显示屏数据手册](datasheet/LCM-UE043HV-RB40-L083A%20SPEC.pdf)
 
-[触摸IC英文手册](datasheet/GT911_EN_Datasheet.pdf)
+[触摸IC英文手册](datasheet//GT911_EN_Datasheet.pdf)
 
 [触摸IC中文手册](datasheet/GT911_CN_Datasheet.pdf)
 
-[5050RGB-LED规格书](datasheet/C2843785_RGB%2BLED(Built-in%20IC)_XL-5050RGBC-WS2812B_specification_WJ1123912.PDF)
+[5050RGB-LED规格书](datasheet//C2843785_RGB%2BLED(Built-in%20IC)_XL-5050RGBC-WS2812B_specification_WJ1123912.PDF)
 
-[CH340C芯片手册](datasheet/C84681_USB%20Conversion%20chip_CH340C_specification_WJ1187874.PDF)
+[CH340C芯片手册](datasheet//C84681_USB%20Conversion%20chip_CH340C_specification_WJ1187874.PDF)
 
 ## 固件下载
 1. 打开tools目录下的ESP32烧录工具

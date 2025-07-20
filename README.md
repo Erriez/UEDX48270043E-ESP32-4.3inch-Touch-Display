@@ -46,8 +46,8 @@
 * For more details, please visit [Espressif ESP32-S3 Datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
 
 ### 2. Screen
-* Size: 5-inch IPS screen
-* Resolution: 800x480px
+* Size: 4.3-inch IPS screen
+* Resolution: 480x272px
 * Screen type: IPS
 * Driver chip: ST7262E43-G4
 * Compatibility library:  ESP32_Display_Panel

@@ -124,13 +124,13 @@ Note: The model name is determined by the screen resolution and size
 
 5. Open the "platformio.ini" file in the project folder (PlatformIO will automatically open the "platformio.ini" file corresponding to the added folder). Under the "[platformio]" section, uncomment and select the example program you want to burn (it should start with "default_envs = xxx") Then click "<kbd>[√](image/4.png)</kbd>" in the bottom left corner to compile,If the compilation is correct, connect the microcontroller to the computer and click "<kbd>[→](image/5.png)</kbd>" in the bottom left corner to download the program.
 
-## PinOverview
+## Pin Overview
 
 | IPS Screen Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
 | DE         | IO40       |
 | VS         | IO41       |
-| HS         | IO439       |
+| HS         | IO39       |
 | PCLK       | IO42       |
 |   R0       |  IO45   |
 |   R1       |  IO48   |
@@ -148,7 +148,6 @@ Note: The model name is determined by the screen resolution and size
 |   B2       |  IO46   |
 |   B3       |  IO9   |
 |   B4       |  IO1   |
-| RST        | IO39       |
 | BACKLIGHT  | IO2       |
 
 | Touch Chip Pin  | ESP32S3 Pin|
@@ -168,12 +167,12 @@ Note: The model name is determined by the screen resolution and size
 |   boot    | IO0       |
 |   reset   | chip-en   |
 
-| SD Card Pin  | ESP32S3 Pin|
-| :------------------: | :------------------:|
-| D1         | IO18       |
-| D2         | IO15       |
-| MOSI        | IO17       |
-| MISO         | IO16       |
+| SD Card Pin | ESP32S3 Pin |
+| :---------: | :---------: |
+| CS          | IO10        |
+| MOSI        | IO11        |
+| SCK         | IO12        |
+| MISO        | IO13        |
 
 | UART/RS485 Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|

@@ -93,9 +93,9 @@ Note: The model name is determined by the screen resolution and size
     * Install the `LVGL` (v8.4.0) library. 
 4. Open the example: `ESP32_Display_Panel`-> `examples` -> `arduino` -> `gui` -> `lvgl_v8`.
 5. Configure the development board:
-    * Edit the `esp_panel_board_supported_conf.h` file.
-    * Enable the macro: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
-    * Uncomment the corresponding screen model definition: `#define BOARD_VIEWE_UEDX48270043E_WB_A`
+    * Edit the `esp_panel_board_supported_conf.h` file:
+      * Enable the macro: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
+      * Uncomment the corresponding screen model definition: `#define BOARD_VIEWE_UEDX48270043E_WB_A`
 6. Configure tool options (S3):
    
     | Setting                               | Value                         |

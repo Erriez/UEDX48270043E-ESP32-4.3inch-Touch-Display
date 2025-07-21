@@ -50,7 +50,7 @@
 * Driver chip: `ST7262E43-G4`
 * Compatibility library:  ESP32_Display_Panel
 * Bus communication protocol: RGB
-* For more details：[Display Datasheet](datasheet/LCM-UE043HV-RB40-L083A SPEC.pdf)
+* For more details：[Display Datasheet](https://github.com/VIEWESMART/UEDX48270043E-ESP32-4.3inch-Touch-Display/blob/main/datasheet/LCM-UE043HV-RB40-L083A%20SPEC.pdf)
   
 Note: The model name is determined by the screen resolution and size
 

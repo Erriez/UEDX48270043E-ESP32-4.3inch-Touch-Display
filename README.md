@@ -22,11 +22,9 @@
 ```
 ├── Libraries         Library files required for the Arduino example  
 ├── Schematic         The circuit schematic of the product   
+├── datasheet         Product specifications, including the IC or peripherals involved
 ├── examples          Sample files, including the IDF framework and the Arduino framework
-├── firmware          firmware
 ├── image             Product or sample project related images
-├── information       Product specifications, including the IC or peripherals involved
-├── tools             Burn tool and image conversion tool
 ├── README_CN.md      Chinese version Quick Guide and Product Brief
 └── README.md         English version of the quick guide and product introduction
 ```
@@ -35,31 +33,31 @@
 
 | Product                     | SOC           |  FLASH  |  PSRAM   | Link                   |
 | :------------------------: | :-----------: |:-------: | :---------: | :------------------: |
-| UEDX48270043E-WB-A V1.1   | ESP32S3R8 |   16M   | 8M (Octal SPI) | [VIEWE Mall](https://viewedisplay.com/product/esp32-7-inch-800x480-rgb-ips-tft-display-touch-screen-arduino-lvgl-uart/)  |
+| UEDX48270043E-WB-A V1.1   | ESP32S3R8 |   16M   | 8M (Octal SPI) | [VIEWE Mall](https://viewedisplay.com/product/esp32-4-3-inch-480x272-rgb-ips-tft-display-touch-screen-arduino-lvgl-wifi-ble-uart-smart-module/)  |
 
 ## Hardware Overview
 
 ### 1.MCU
-* Chip: ESP32-S3-N16R8
-* PSRAM: 8M (Octal SPI) 
-* FLASH: 16M
-* For more details, please visit[Espressif ESP32-S3 Datashee](https://www.espressif.com.cn/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
+* Chip: `ESP32-S3-N16R8`
+* PSRAM: `8M (Octal SPI)`
+* FLASH: `16M`
+* For more details, please visit [Espressif ESP32-S3 Datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
 
 ### 2. Screen
-* Size: 5-inch IPS screen
-* Resolution: 800x480px
+* Size: 4.3-inch IPS screen
+* Resolution: 480x272px
 * Screen type: IPS
-* Driver chip: ST7262E43-G4
+* Driver chip: `ST7262E43-G4`
 * Compatibility library:  ESP32_Display_Panel
 * Bus communication protocol: RGB
-* For more details：[Display Datasheet](datasheet/UE043WV-RB40-L037A.pdf)
+* For more details：[Display Datasheet](datasheet/LCM-UE043HV-RB40-L083A SPEC.pdf)
   
 Note: The model name is determined by the screen resolution and size
 
 ### 3. Touch
-* Chip: GT911
+* Chip: `GT911`
 * Bus communication protocol: IIC
-* For more details：[Touch IC Datasheet_EN](information/GT911_EN_Datasheet.pdf)
+* For more details：[Touch IC Datasheet_EN](datasheet/GT911_EN_Datasheet.pdf)
 
 ## Hardware Connections
 - Connect the screen ribbon cable and touch ribbon cable (gold contacts 
@@ -69,7 +67,7 @@ Note: The model name is determined by the screen resolution and size
 - For the first programming, press and hold the `BOOT` button to enter 
  download mode.
 <p align="center" width="100%">
-    <img src="image/overview.png" alt="example">
+    <img src="image/overview.png" alt="TODO: Fix overview.png example">
 </p>
 
 
@@ -80,7 +78,7 @@ Note: The model name is determined by the screen resolution and size
 | Support IDE | Version |
 | ------  | ------  |
 | `[ESP-IDF]` | `[V5.1/5.2/5.3]` |
-| `[Arduino IDE]` | `[esp32 >=v3.0.7]` | 
+| `[Arduino IDE]` | `[esp32 >=v3.2.1]` | 
 | `[Platformio IDE]` |  |
 ### ESP-IDF Framework ([Novice tutorial]())
 - Supported Versions: v5.1/5.2/5.3
@@ -88,16 +86,16 @@ Note: The model name is determined by the screen resolution and size
 - Repository Address: [examples](examples/esp_idf)
 
 ### Arduino Framework ([Novice tutorial]())
-1. Install[Arduino](https://www.arduino.cc/en/software),Choose installation based on your system type.
-2. Install the ESP32 core: Search for and download `esp32`(by Espressif >= v3.0.7) in the `Board Manager`.
+1. Install [Arduino](https://www.arduino.cc/en/software), Choose installation based on your system type.
+2. Install the ESP32 core: Search for and download `esp32`(by Espressif >= v3.2.1) in the `Board Manager`.
 3. Install the required libraries:
-    * Search and install `ESP32_Display_Panel` (v1.0.0). Select `Yes` for automatic dependency installation.
+    * Search and install `ESP32_Display_Panel` (v1.0.3). Select `Yes` for automatic dependency installation.
     * Install the `LVGL` (v8.4.0) library. 
 4. Open the example: `ESP32_Display_Panel`-> `examples` -> `arduino` -> `gui` -> `lvgl_v8`.
 5. Configure the development board:
-    * Edit the `esp_panel_board_supported_conf.h` file.
-    * Enable the macro: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
-    * Uncomment the corresponding screen model definition: `#define BOARD_VIEWE_UEDX48270043E_WB_A`
+    * Edit the `esp_panel_board_supported_conf.h` file:
+      * Enable the macro: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
+      * Uncomment the corresponding screen model definition: `#define BOARD_VIEWE_UEDX48270043E_WB_A`
 6. Configure tool options (S3):
    
     | Setting                               | Value                         |
@@ -114,23 +112,23 @@ Note: The model name is determined by the screen resolution and size
 8. Click "<kbd>[√](image/8.png)</kbd>" in the upper right corner to compile,If the compilation is correct, connect the microcontroller to the computer,Click "<kbd>[→](image/9.png)</kbd>" in the upper right corner to download.
 
 ### PlatformIO ([Novice tutorial]())
-1. Install[VisualStudioCode](https://code.visualstudio.com/Download),Choose installation based on your system type.
+1. Install [VisualStudioCode](https://code.visualstudio.com/Download), Choose installation based on your system type.
 
-2. Open the "Extension" section of the Visual Studio Code software sidebar(Alternatively, use "<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>" to open the extension),Search for the "PlatformIO IDE" extension and download it.
+2. Open the "Extension" section of the Visual Studio Code software sidebar(Alternatively, use "<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>" to open the extension), Search for the "PlatformIO IDE" extension and download it.
 
 3. During the installation of the extension, you can go to GitHub to download the program. You can download the main branch by clicking on the "<> Code" with green text.
 
-4. After the installation of the extension is completed, open the Explorer in the sidebar(Alternatively, use "<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd>" go open it),Click "Open Folder", find the project code you just downloaded (the entire folder), then find the PlatformIO folder and click "Add". At this point, the project file will be added to your workspace.
+4. After the installation of the extension is completed, open the Explorer in the sidebar(Alternatively, use "<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd>" go open it), Click "Open Folder", find the project code you just downloaded (the entire folder), then find the PlatformIO folder and click "Add". At this point, the project file will be added to your workspace.
 
 5. Open the "platformio.ini" file in the project folder (PlatformIO will automatically open the "platformio.ini" file corresponding to the added folder). Under the "[platformio]" section, uncomment and select the example program you want to burn (it should start with "default_envs = xxx") Then click "<kbd>[√](image/4.png)</kbd>" in the bottom left corner to compile,If the compilation is correct, connect the microcontroller to the computer and click "<kbd>[→](image/5.png)</kbd>" in the bottom left corner to download the program.
 
-## PinOverview
+## Pin Overview
 
 | IPS Screen Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
 | DE         | IO40       |
 | VS         | IO41       |
-| HS         | IO439       |
+| HS         | IO39       |
 | PCLK       | IO42       |
 |   R0       |  IO45   |
 |   R1       |  IO48   |
@@ -148,7 +146,6 @@ Note: The model name is determined by the screen resolution and size
 |   B2       |  IO46   |
 |   B3       |  IO9   |
 |   B4       |  IO1   |
-| RST        | IO39       |
 | BACKLIGHT  | IO2       |
 
 | Touch Chip Pin  | ESP32S3 Pin|
@@ -168,12 +165,12 @@ Note: The model name is determined by the screen resolution and size
 |   boot    | IO0       |
 |   reset   | chip-en   |
 
-| SD Card Pin  | ESP32S3 Pin|
-| :------------------: | :------------------:|
-| D1         | IO18       |
-| D2         | IO15       |
-| MOSI        | IO17       |
-| MISO         | IO16       |
+| SD Card Pin | ESP32S3 Pin |
+| :---------: | :---------: |
+| CS          | IO10        |
+| MOSI        | IO11        |
+| SCK         | IO12        |
+| MISO        | IO13        |
 
 | UART/RS485 Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
@@ -186,26 +183,31 @@ Note: The model name is determined by the screen resolution and size
 
 ## Schematic
 <p align="center" width="100%">
-    <img src="image/UEDX80480043E-sch.png" alt="example">
+    <a href="Schematic/UEDX48270043E-sch.png" target="_blank">
+        <img src="Schematic/UEDX48270043E-sch_thumb.png" alt="schematic">
+    </a>
 </p>
 
 ## Information
-[products specification](datasheet/UEDX80480043E-WB-A%20V3.2%20SPEC.pdf)
+[Products specification](datasheet/UEDX48270043E-WB-A%20V3.1%20SPEC.pdf)
 
-[Display Datasheet](datasheet/UE043WV-RB40-L037A.pdf)
+[Display Datasheet](datasheet/LCM-UE043HV-RB40-L083A%20SPEC.pdf)
 
 [Touch IC Datasheet_EN](datasheet//GT911_EN_Datasheet.pdf)
 
-[Touch IC Datasheet_CN](datasheet/n/GT911_CN_Datasheet.pdf)
+[Touch IC Datasheet_CN](datasheet/GT911_CN_Datasheet.pdf)
 
 [5050RGB-LED](datasheet//C2843785_RGB%2BLED(Built-in%20IC)_XL-5050RGBC-WS2812B_specification_WJ1123912.PDF)
 
 [CH340C](datasheet//C84681_USB%20Conversion%20chip_CH340C_specification_WJ1187874.PDF)
 
-## firmware download
-1. Open the project file "tools" and locate the ESP32 burning tool. Open it.
+## Firmware download
 
-2. Select the correct burning chip and burning method, then click "OK." As shown in the picture, follow steps 1->2->3->4->5 to burn the program. If the burning is not successful, press and hold the "BOOT-0" button and then download and burn again.
+TODO: This section is outdated:
+
+1. Open the project file `tools` and locate the ESP32 burning tool. Open it.
+
+2. Select the correct burning chip and burning method, then click `OK.` As shown in the picture, follow steps 1->2->3->4->5 to burn the program. If the burning is not successful, press and hold the `BOOT-0` button and then download and burn again.
 
 3. Burn the file in the root directory of the project file "[firmware](./firmware/)" file,There is a description of the firmware file version inside, just choose the appropriate version to download.
 
@@ -226,13 +228,13 @@ Note: The model name is determined by the screen resolution and size
 
 <br />
 
-* Q. Why is there no serial data output on the "Uart" interface on my board? Is it defective and unusable?
-* A. The default project configuration uses the USB interface as Uart0 serial output for debugging purposes. The "Uart" interface is connected to Uart0, so it won't output any data without configuration.<br />For PlatformIO users, please open the project file "platformio.ini" and modify the option under "build_flags = xxx" from "-D ARDUINO_USB_CDC_ON_BOOT=true" to "-D ARDUINO_USB_CDC_ON_BOOT=false" to enable external "Uart" interface.<br />For Arduino users, open the "Tools" menu and select "USB CDC On Boot: Disabled" to enable the external "Uart" interface.
+* Q. Why is there no serial data output on the `Uart` interface on my board? Is it defective and unusable?
+* A. The default project configuration uses the USB interface as Uart0 serial output for debugging purposes. The `Uart` interface is connected to Uart0, so it won't output any data without configuration.<br />For PlatformIO users, please open the project file `platformio.ini` and modify the option under `build_flags = xxx` from `-D ARDUINO_USB_CDC_ON_BOOT=true` to `-D ARDUINO_USB_CDC_ON_BOOT=false` to enable external `Uart` interface.<br />For Arduino users, open the `Tools` menu and select `USB CDC On Boot: Disabled` to enable the external `Uart` interface.
 
 <br />
 
 * Q. Why is my board continuously failing to download the program?
-* A. Please hold down the "BOOT" button and try downloading the program again.
+* A. Please hold down the `BOOT` button and try downloading the program again.
 
 
 
